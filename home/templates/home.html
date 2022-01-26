@@ -15,5 +15,13 @@
     {% else %}
         <a href="{% url 'login' %}">LOGIN</a>
     {% endif %}
+
+<h1> MENU </h1>
+<ul>
+    <a href="{% url 'person_list' %}">LISTA</a>
+    <a href="{% url 'person_new' %}">CREATE</a>
+
+</ul>
+
 </body>
 </html>
