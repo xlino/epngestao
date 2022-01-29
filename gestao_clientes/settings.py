@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrapform',
     'clientes',
     'home',
 ]
@@ -142,6 +143,8 @@ MEDIA_ROOT = 'media'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#TATICFILES_DIRS = ['statics']
+STATICFILES_DIRS = [
+    'static',
+]
 # Activate Django-Heroku.
 django_heroku.settings(locals())

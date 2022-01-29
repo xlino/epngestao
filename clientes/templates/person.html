@@ -1,38 +1,36 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<a href="{% url 'logout' %}">SAIR</a>
-<h1> MODULO PESSOA LISTA </h1>
-<table>
-  <thead>
-    <tr>
+{% extends 'base.html' %}
+{% block title %}LISTA{% endblock %}
+    {% block main %}
+    <div class="row">
+            <div class="col-sm">
+                <h1> MODULO LISTA </h1>
+            <table>
+                <thead>
+                <tr>
+                    <th>NOME</th>
+                    <th></th>
+                    <th>SOBRENOME</th>
+                </tr>
+                </thead>
+            </table>
+            <ul class="list-group">
+                {% for person in persons %}
+                    <li class="list-group-item">
+                        <a href="{% url 'person_update' person.id %}" >{{person.first_name }}{{person.last_name }}</a>
+                        <a href="{% url 'person_delete' person.id %}"
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <br>
+            <a href="{% url 'person_new' %}" class="btn btn-primary">NOVO CLIENTE</a>
+            </div>
+            <div class="col-sm">
 
-      <th>NOME</th>
-        <th></th>
-      <th>SOBRENOME</th>
-
-    </tr>
-  </thead>
-</table>
-    <ul>
-        {% for person in persons %}
-
-            <li>
-                <a href="{% url 'person_update' person.id %}" >{{person.first_name }}{{person.last_name }}</a>
-                <a href="{% url 'person_delete' person.id %}" >Deletar</a>
-            </li>
-
-        {% endfor %}
-
-    </ul>
-    <br>
-    <a href="{% url 'person_new' %}">NOVO CLIENTE</a>
-</body>
-</html>
+            </div>
+            <div class="col-sm">
+                <a href="{% url 'logout' %}"class="btn btn-info">SAIR</a>
+            </div>
+    </div>
+    {% endblock %}

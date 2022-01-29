@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PERSON DELETE </title>
+{% extends 'base.html' %}
 
-</head>
-<body>
+{% block title %}CONFIRMA{% endblock %}
+    {% block main %}
     <h1> MODULO CONFIRMA DELETE </h1>
     <h1> Tem certeza que deseja deletar {{person.first_name}} {{person.last_name}}? </h1>
     <form method="POST" enctype="multipart/form-data" >
         {% csrf_token %}
         {{form}}
         <br>
-        <button type="submit">DELETAR</button>
+        <button type="submit" class="btn btn-danger" >DELETAR</button>
         <br>
-        <a href="{% url 'person_list' %}">RETORNA PARA LISTAGEM</a>
+        <a href="{% url 'person_list' %}"class="btn btn-primary">RETORNA PARA LISTAGEM</a>
     </form>
-
-</body>
-</html>
+    {% endblock %}

@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>LOGIN</title>
-</head>
-<body>
-    <h3>LOGIN</h3>
+{% extends 'base.html' %}
+{% load bootstrap %}
 
-	<form method="POST">
-	    {%  csrf_token %}
-	    {{ form.as_p}}
-	    <Button type=”submit”>LOGIN</button>
-    </form>
+{% block title %}LOGIN{% endblock %}
 
-</body>
-</html>
+{% block main %}
+
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            <h1> MODULO LOGIN </h1>
+                <form method="POST">
+                    {%  csrf_token %}
+                    {{ form|bootstrap}}
+                    <button type="submit" class="btn btn-info">LOGIN</button>
+                </form>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+{% endblock %}
