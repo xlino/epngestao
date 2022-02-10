@@ -7,7 +7,15 @@ from .forms import PersonForm
 # Create your views here.
 @login_required
 def persons_list(request):
-    persons = Person.objects.all()
+    nome = request.GET.get('nome', None)
+    sobrenome = request.GET.get('sobrenome', None)
+
+    if nome or sobrenome:
+        persons = Person.objects.filter(first_name__icontains=nome, last_name__icontains=sobrenome)
+#        persons = persons.filter(first_name=termo_busca)
+    else:
+        persons = Person.objects.all()
+
     return render(request, 'person.html', {'persons': persons})
 
 @login_required

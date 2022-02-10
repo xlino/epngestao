@@ -1,9 +1,27 @@
 {% extends 'base.html' %}
+
 {% block title %}LISTA{% endblock %}
     {% block main %}
+
+    <div class="row">
+        <h1> PESQUISA</h1>
+        <div class="col-12">
+            <form class="form-inline">
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome">
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Digite o sobrenome">
+                </div>
+              <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+            </form>
+        </div>
+    </div>
+
     <div class="row">
             <div class="col-sm">
                 <h1> MODULO LISTA </h1>
+
             <table>
                 <thead>
                 <tr>
@@ -13,16 +31,39 @@
                 </tr>
                 </thead>
             </table>
-            <ul class="list-group">
-                {% for person in persons %}
-                    <li class="list-group-item">
-                        <a href="{% url 'person_update' person.id %}" >{{person.first_name }}{{person.last_name }}</a>
-                        <a href="{% url 'person_delete' person.id %}"
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
+
+             <ul class="list-group">
+
+
+                    {% block x=0 %} {% endblock %}
+                    {% for person in persons %}
+
+                        <li class="list-group-item">
+                            <a href="{% url 'person_update' person.id %}" >{{person.first_name }}{{person.last_name }}</a>
+                            <a href="{% url 'person_delete' person.id %}"
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </li>
+                    {% endfor %}
+
+
+{% with name=3 %}
+<html>
+<div>INICIA TESTE COM NUMERO {{name}}!</div>
+</html>
+
+
+
+
+
+                    {% if name == 1 %}
+                        numero e igual
+                    {% else %}
+                        numero e diferente
+                    {% endif %}
+
+{% endwith %}
+           </ul>
             <br>
             <a href="{% url 'person_new' %}" class="btn btn-primary">NOVO CLIENTE</a>
             </div>
