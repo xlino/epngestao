@@ -35,7 +35,11 @@
         /* Custom page CSS
         -------------------------------------------------- */
         /* Not required for template or sticky footer method. */
-
+        p {
+          color: white;
+          padding: 8px;
+          font-family: Arial, Helvetica, sans-serif
+        }
         body > .container {
         padding: 60px 15px 0;
         }
@@ -46,9 +50,12 @@
         }
 
         code {
-        font-size: 80%;
+        font-size: 60%;
         }
-
+        .icon {
+          font-size: 1.75rem;
+          color: #fff;
+        }
     </style>
   </head>
 <body>
@@ -87,7 +94,14 @@
           </form-->
           <form class="form-inline mt-2 mt-md-0">
             <!--a class="nav-link" href= "{% url 'logout' %}">LOGOUT <span class="sr-only">(current)</span></a-->
-            <a href="{% url 'logout' %}"class="btn btn-info">SAIR</a>
+                {% if user.is_authenticated %}
+                    <p><style> body { color: blue;}</style>
+                      Ola {{user.username}}</p>
+                    <a href="{% url 'logout' %}"class="btn btn-info"> LOGOUT </a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-info">LOGIN</a>
+                {% endif %}
+            <!--a href="{% url 'logout' %}"class="btn btn-info">SAIR</a-->
           </form>
 
         </div>
