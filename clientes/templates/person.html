@@ -47,15 +47,10 @@
                     {% endfor %}
 
 
+
+<!--html>
 {% with name=3 %}
-<html>
 <div>INICIA TESTE COM NUMERO {{name}}!</div>
-</html>
-
-
-
-
-
                     {% if name == 1 %}
                         numero e igual
                     {% else %}
@@ -63,15 +58,23 @@
                     {% endif %}
 
 {% endwith %}
+
+</html-->
+
+
+
+
+
+
            </ul>
             <br>
             <a href="{% url 'person_new' %}" class="btn btn-primary">NOVO CLIENTE</a>
             </div>
             <div class="col-sm">
+            </div>
 
-            </div>
-            <div class="col-sm">
+            <!--div class="col-sm">
                 <a href="{% url 'logout' %}"class="btn btn-info">SAIR</a>
-            </div>
+            </div-->
     </div>
     {% endblock %}
