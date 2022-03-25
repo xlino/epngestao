@@ -37,20 +37,23 @@
 
                     {% block x=0 %} {% endblock %}
                     {% for person in persons %}
-
                         <li class="list-group-item">
                             <a href="{% url 'person_update' person.id %}" >{{person.first_name }}{{person.last_name }}</a>
                             <a href="{% url 'person_delete' person.id %}"
-                                <i class="fas fa-trash-alt fa-pull-right" ></i>
+                                <i class="fas fa-trash-alt fa-pull-right" style="color:red;"></i>
                             </a>
                         </li>
                     {% endfor %}
 
 
-
 <!--html>
-{% with name=3 %}
+
+{% with name=3000 %}
 <div>INICIA TESTE COM NUMERO {{name}}!</div>
+
+
+
+    <div>FINALIZA TESTE COM NUMERO {{name}}!</div>
                     {% if name == 1 %}
                         numero e igual
                     {% else %}
@@ -62,13 +65,10 @@
 </html-->
 
 
-
-
-
-
            </ul>
             <br>
             <a href="{% url 'person_new' %}" class="btn btn-primary">NOVO CLIENTE</a>
+            <a href="{% url 'home' %}" class="btn btn-primary"">HOME</a>
             </div>
             <div class="col-sm">
             </div>

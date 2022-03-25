@@ -15,10 +15,10 @@
             <form method="POST" enctype="multipart/form-data" >
                 {% csrf_token %}
                 {{form | bootstrap}}
-                <br>
-                <button type="submit" class="btn btn-info" >SALVAR</button>
-                <br>
-                <a href="{% url 'person_list' %}" class="btn btn-info"">RETORNA PARA LISTAGEM</a>
+                <a><button type="submit" class="btn btn-primary" >SALVAR</button></a>
+                <a href="{% url 'home' %}" class="btn btn-primary"">HOME</a>
+                <a href="{% url 'person_list' %}" class="btn btn-primary"">RETORNA PARA LISTAGEM</a>
+
             </form>
 
 

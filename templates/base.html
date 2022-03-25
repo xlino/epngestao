@@ -97,9 +97,9 @@
                 {% if user.is_authenticated %}
                     <p><style> body { color: blue;}</style>
                       Ola {{user.username}}</p>
-                    <a href="{% url 'logout' %}"class="btn btn-info"> LOGOUT </a>
+                    <a href="{% url 'logout' %}"class="btn btn-danger"> LOGOUT </a>
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-info">LOGIN</a>
+                    <a href="{% url 'login' %}" class="btn btn-primary">LOGIN</a>
                 {% endif %}
             <!--a href="{% url 'logout' %}"class="btn btn-info">SAIR</a-->
           </form>

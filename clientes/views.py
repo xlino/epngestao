@@ -15,7 +15,6 @@ def persons_list(request):
 #        persons = persons.filter(first_name=termo_busca)
     else:
         persons = Person.objects.all()
-
     return render(request, 'person.html', {'persons': persons})
 
 @login_required
