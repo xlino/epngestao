@@ -6,7 +6,7 @@ from .models import *
 from .forms import OrderForm, CreateUserForm, CustomerForm
 from .filters import OrderFilter
 from .decorators import unauthenticated_user, allowed_users, admin_only
-import locale
+#import locale
 
 # Create your views here.
 def teste(request):

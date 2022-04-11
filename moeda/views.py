@@ -4,7 +4,7 @@ from django.contrib.auth.decorators  import  login_required
 #from .forms import ContratoForm
 from .models import Contrato
 from .forms import ContratoForm
-import locale
+#import locale
 
 # Create your views here.
 #def listamoeda(request):
