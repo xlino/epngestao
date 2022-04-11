@@ -15,7 +15,7 @@ def persons_list(request):
 #        persons = persons.filter(first_name=termo_busca)
     else:
         persons = Person.objects.all()
-    return render(request, 'person.html', {'persons': persons})
+    return render(request, 'clientes/person.html', {'persons': persons})
 
 @login_required
 def persons_new(request):
@@ -23,7 +23,7 @@ def persons_new(request):
     if form.is_valid():
         form.save()
         return redirect('person_list')
-    return render(request, 'person_form.html', {'form': form})
+    return render(request, 'clientes/person_form.html', {'form': form})
 
 @login_required
 def persons_update(request, id):
@@ -34,7 +34,7 @@ def persons_update(request, id):
         form.save()
         return redirect('person_list')
 
-    return render(request, 'person_form.html', {'form': form})
+    return render(request, 'clientes/person_form.html', {'form': form})
 
 @login_required
 def persons_delete(request, id):
@@ -45,4 +45,4 @@ def persons_delete(request, id):
         person.delete()
         return redirect('person_list')
 
-    return render(request, 'person_delete_confirm.html', {'person': person})
+    return render(request, 'clientes/person_delete_confirm.html', {'person': person})
