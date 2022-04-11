@@ -77,9 +77,9 @@ def userPage(request):
         orders = request.user.customer.order_set.all()
 
         total_orders = orders.count()
-        delivered = orders.filter(status='Delivered').count()
-        pending = orders.filter(status='Pending').count()
-        print("ORDERS", orders)
+        delivered = orders.filter(status='delivered').count()
+        pending = orders.filter(status='pending').count()
+        print("ORDERS1", orders)
 
         context = {'orders': orders, 'total_orders': total_orders, 'delivered': delivered,
                    'pending': pending}
