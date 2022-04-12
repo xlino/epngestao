@@ -1,34 +1,29 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
 
-{% block title %}Inicio HOME{% endblock %}
+{% block title %}HOME{% endblock %}
     {% block main %}
     <div class="row">
 
-          <!--div class="col-sm">
+          <!div class="col-sm">
 
               <h1> MODULO HOME </h1>
                 {% if user.is_authenticated %}
-                    <p> Ola {{user.username}}</p>
-                    <a href="{% url 'logout' %}">LOGOUT</a>
+                    <p> Usuário {{user.username}}</p>
+                    <a href="{% url 'home' %}">LOGOUT</a>
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-info">LOGIN</a>
+                    <!--a href="{% url 'home' %}" class="btn btn-info">LOGIN</a-->
                 {% endif %}
-        </div-->
+        </div>
 
         <div class="col-sm">
-            <h2> MENU DE OPÇÕES </h2>
-            <ul>
-                <a href="{% url 'person_list' %}" class="btn btn-primary" >LISTA</a>
-            </ul>
-            <ul>
-                <a href="{% url 'person_new' %}" class="btn btn-primary">CREATE</a>
-            </ul>
-            <ul>
-                <a href="{% url 'home' %}" class="btn btn-primary">CRIA NOVO CONTRATO</a>
-            </ul>
+            <h2> OPÇÕES </h2>
+
             <ul>
                 <a href="{% url 'home' %}" class="btn btn-primary">DASHBOARD DE PROJETOS</a>
+            </ul>
+            <ul>
+                <a href="{% url 'teste' %}" class="btn btn-primary">CURRICULO</a>
             </ul>
 
         </div>
