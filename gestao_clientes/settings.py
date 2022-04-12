@@ -46,10 +46,10 @@ INSTALLED_APPS = [
     'bootstrapform',
     'widget_tweaks',
     'clientes',
-    'blog',
+    #'blog',
     'home',
-    'moeda',
-    'controle',
+    #'moeda',
+    #'controle',
     #'projetos',
 ]
 
