@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'home',
     #'moeda',
     #'controle',
-    #'projetos',
+    'projetos',
 ]
 
 MIDDLEWARE = [
