@@ -155,7 +155,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     'static',
 ]
-
+#DISABLE_COLLECTSTATIC=1,
 
 #SMTP Configuration
 '''
