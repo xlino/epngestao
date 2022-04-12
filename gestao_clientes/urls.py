@@ -28,18 +28,18 @@ from clientes import urls as clientes_urls
 from home import urls as home_urls
 from blog import urls as blog_urls
 from moeda import urls as moeda_urls
-from projetos import urls as projetos_urls
+#from projetos import urls as projetos_urls
 #from controle import urls as controle_urls
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
-from projetos import urls as projetos_urls
+#from projetos import urls as projetos_urls
 
 urlpatterns = [
     path('', include(home_urls)),
     path('moeda/',include(moeda_urls)),
     #path('controle/', include(controle_urls)),
-    path('projetos/', include(projetos_urls)),
+    #path('projetos/', include(projetos_urls)),
     path('blog/', include(blog_urls)),
     path('clientes/', include(clientes_urls)),
     path('login/', auth_views.LoginView.as_view(), name='login'),
