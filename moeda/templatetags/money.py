@@ -5,4 +5,4 @@ register = template.Library()
 
 @register.filter
 def currency(value):
-        return locale.currency(value)
+        pass
