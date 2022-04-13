@@ -1,4 +1,4 @@
-
+{% load static %}
 {% load bootstrap %}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
 </head>
 
     <style>
-    /* Sticky footer styles
+    /* Footer styles
         -------------------------------------------------- */
         html {
         position: relative;
@@ -26,12 +26,12 @@
         /* Set the fixed height of the footer here */
         height: 60px;
         line-height: 60px; /* Vertically center the text there */
-        background-color: navy;
+        background-color: gray;
         }
 
         /* Custom page CSS
         -------------------------------------------------- */
-        /* Not required for template or sticky footer method. */
+        /* Not required for template or  footer method. */
         p {
           color: white;
           padding: 8px;
@@ -51,20 +51,15 @@
         }
         .icon {
           font-size: 1.75rem;
-          color: #fff;
+          color: white;
         }
     </style>
   </head>
 <body>
 
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href=href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-        crossorigin="anonymous">
-    <script src="{% static 'js/scripts.js' %}"></script>
 
 
-  <body cz-shortcut-listen="true">
+  <body>
 
     <header>
       <!-- Fixed navbar -->
@@ -76,7 +71,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
           </ul>
-          <form class="form-inline mt-2 mt-md-0">
+          <form>
                 {% if user.is_authenticated %}
                     <p><style> body { color: blue;}</style>
                       Ola {{user.username}}</p>
@@ -91,29 +86,26 @@
     </header>
 
     <main>
-        <div class=""container">
-
-                {% block main %}
-                {% endblock %}
-
+        <div>
+            {% block main %}
+            {% endblock %}
         </div>
     </main>
 
 
-
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">WEB COM DJANGO</span>
+        <span>WEB COM DJANGO</span>
       </div>
     </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Placed at the end of the document so the pages load faster
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.bundle.min.js"></script>
-
+-->
   </body>
 </html>
