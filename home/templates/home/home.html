@@ -6,26 +6,16 @@
 
     {% block main %}
     <div class="row">
-
-          <!div class="col-sm">
-
-              <h1> MODULO HOME </h1>
-                {% if user.is_authenticated %}
-                    <p> Usuário {{user.username}}</p>
-                    <a href="{% url 'home' %}">LOGOUT</a>
-                {% else %}
-                    <!--a href="{% url 'home' %}" class="btn btn-info">LOGIN</a-->
-                {% endif %}
-        </div>
+        <h1> MODULO HOME </h1>
+    </div>
 
         <div class="col-sm">
             <h2> OPÇÕES </h2>
-
             <ul>
-                <a href="{% url 'home' %}" class="btn btn-primary">DASHBOARD DE PROJETOS</a>
+                <a href="{% url 'home' %}" class="btn btn-primary"> DASHBOARD DE PROJETOS</a>
             </ul>
             <ul>
-                <a href="{% url 'teste' %}" class="btn btn-primary">CURRICULO</a>
+                <a href="{% url 'teste' %}" class="btn btn-primary"> CURRICULO</a>
             </ul>
 
         </div>
