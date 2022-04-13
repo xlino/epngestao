@@ -1,27 +1,119 @@
 {% load static %}
+{% load bootstrap %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>CONTROLE</title>
+    <title>{% block title %}{% endblock %}</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
+    <style>
+    /* Sticky footer styles
+        -------------------------------------------------- */
+        html {
+        position: relative;
+        min-height: 100%;
+        }
+        body {
+        /* Margin bottom by footer height */
+        margin-bottom: 60px;
+        }
+        .footer {
+        position: absolute;
+        /* 60px é a altura do próprio footer, por isso usando valor negativo ele fica para fora da página a própria altura */
+        bottom: -60px;
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        height: 60px;
+        line-height: 60px; /* Vertically center the text there */
+        background-color: navy;
+        }
 
-	<div class="container-fluid">
-		{% block main %}
+        /* Custom page CSS
+        -------------------------------------------------- */
+        /* Not required for template or sticky footer method. */
+        p {
+          color: white;
+          padding: 8px;
+          font-family: Arial, Helvetica, sans-serif
+        }
+        body > .container {
+        padding: 60px 15px 0;
+        }
+
+        .footer > .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        }
+
+        code {
+        font-size: 60%;
+        }
+        .icon {
+          font-size: 1.75rem;
+          color: #fff;
+        }
+    </style>
+  </head>
+<body>
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href=href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <script src="{% static 'js/scripts.js' %}"></script>
 
 
-		{% endblock %}
+  <body cz-shortcut-listen="true">
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">ERMELINO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+                {% if user.is_authenticated %}
+                    <p><style> body { color: blue;}</style>
+                      Ola {{user.username}}</p>
+                    <a href="{% url 'home' %}"class="btn btn-danger"> LOGOUT </a>
+                {% else %}
+                    <a href="{% url 'home' %}" class="btn btn-primary">LOGIN</a>
+                {% endif %}
+          </form>
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+        <div class=""container">
+
+                {% block main %}
+                {% endblock %}
+
+        </div>
+    </main>
 
 
-	</div>
 
-<footer class="footer">
+    <footer class="footer">
       <div class="container">
-        <span class="text-muted">2021 @ Ermelino</span>
+        <span class="text-muted">WEB COM DJANGO</span>
       </div>
-</footer>
+    </footer>
 
-</body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.bundle.min.js"></script>
 
+  </body>
 </html>
