@@ -14,3 +14,6 @@ def home(request):
 def mylogout(request):
     logout(request)
     return render(request, 'home/home.html')
+
+def dashboard(request):
+    return render(request, 'projetos/dashboard.html')
