@@ -11,10 +11,6 @@ def teste(request):
 def home(request):
     return render(request, 'home/home.html')
 
-def login(request):
+def mylogout(request):
     logout(request)
-    return redirect ('home')
-
-def logout(request):
-    logout(request)
-    return redirect ('home')
+    return render(request, 'home/home.html')

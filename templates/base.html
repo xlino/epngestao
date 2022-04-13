@@ -70,10 +70,10 @@
           <form>
                 {% if user.is_authenticated %}
                     <p><style> body { color: blue;}</style>
-                      Ola {{user.username}}</p>
-                    <a href="{% url 'home' %}"class="btn btn-danger"> LOGOUT </a>
+                      Bem vindo {{user.username}}</p>
+                    <a href="{% url 'logout' %}"class="btn btn-danger"> LOGOUT </a>
                 {% else %}
-                    <a href="{% url 'home' %}" class="btn btn-primary">LOGIN</a>
+                    <a href="{% url 'login' %}" class="btn btn-primary">LOGIN</a>
                 {% endif %}
           </form>
 
