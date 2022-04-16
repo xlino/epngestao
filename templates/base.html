@@ -53,7 +53,7 @@ body{
         -------------------------------------------------- */
         /* Not required for template or  footer method. */
         p {
-          color: white;
+          color: black;
           padding: 8px;
           font-family: Arial, Helvetica, sans-serif
         }
@@ -89,9 +89,10 @@ body{
           </ul>
           <form>
                 {% if user.is_authenticated %}
-                    <p><style> body { color: blue;}</style>
-                      Bem vindo {{user.username}}</p>
-                    <a href="{% url 'logout' %}"class="btn btn-danger"> LOGOUT </a>
+                    <style> body { color: white;}</style>
+
+                    <span class="hello-msg"> Olá, {{request.user}}</span>
+                    <a  Olá, {{request.user}} href="{% url 'logout' %}" class="btn btn-danger"> LOGOUT </a>
                 {% else %}
                     <a href="{% url 'login' %}" class="btn btn-primary">LOGIN</a>
                 {% endif %}
