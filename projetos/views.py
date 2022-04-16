@@ -12,6 +12,8 @@ from .decorators import unauthenticated_user, allowed_users, admin_only
 #def teste(request):
 #    return render(request, 'projetos/teste.html')
 
+
+
 #@unauthenticated_user
 def registerPage(request):
         form = CreateUserForm()
@@ -50,6 +52,7 @@ def loginPage(request):
 def logoutUser(request):
         logout(request)
         return redirect('login')
+
 
 
 #@login_required(login_url='login')
@@ -100,6 +103,9 @@ def accountSettings(request):
 
         return render(request, 'projetos/account_settings.html', context)
 
+def testex(request):
+    return render(request, 'projetos/testex.html')
+
 #@login_required(login_url='login')
 #@allowed_users(allowed_roles=['admin', 'customer'])
 def products(request):
@@ -110,7 +116,7 @@ def products(request):
 
 #@login_required(login_url='login')
 #@allowed_users(allowed_roles=['admin'])
-def customer(request, pk_test):
+def customer(request):
         customer = Customer.objects.get(id=pk_test)
 
         orders = customer.order_set.all()
@@ -126,7 +132,7 @@ def customer(request, pk_test):
 
 #@login_required(login_url='login')
 #@allowed_users(allowed_roles=['admin'])
-def createOrder(request, pk):
+def createorder(request):
         OrderFormSet = inlineformset_factory(Customer, Order, fields=('product', 'status'), extra=10)
         customer = Customer.objects.get(id=pk)
         formset = OrderFormSet(queryset=Order.objects.none(), instance=customer)

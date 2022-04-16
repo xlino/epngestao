@@ -6,39 +6,40 @@
 <br>
 <br>
 <br>
+
 {% include 'projetos/status.html' %}
+
 <br>
 
 <div class="row">
-
     <div class="col-md">
-        <h5>CLIENTES:</h5>
+        <h5>CUSTOMERS:</h5>
         <hr>
-        <!--div class="card card-body">
-            <a class="btn btn-primary btn-sm btn-block" href="">Create Customer</a>
+        <div class="card card-body">
+            <a class="btn btn-primary btn-sm btn-block" href="{% url 'customer' %}">Create Customer</a>
             <table class="table table-sm">
                 <tr>
                     <th></th>
-                    <th>Customer</th>
+                    <th>Customer1</th>
                     <th>Phone</th>
                 </tr>
                 {% for customer in customers %}
                 <tr>
-                    <td><a class="btn btn-sm btn-info" href="{% url 'register' %}">View</a></td>
+                    <td><a class="btn btn-sm btn-info" href="{% url 'customer' customer.id %}">View</a></td>
                     <td>{{customer.name}}</td>
                     <td>{{customer.phone}}</td>
                 </tr>
                 {% endfor %}
             </table>
-        </div-->
+        </div>
     </div>
     <div class="col-md">
-        <h5>ÚLTIMAS SOLICITAÇÕES:</h5>
+        <h5>LAST 5 ORDERS:</h5>
         <hr>
         <div class="card card-body">
             <table class="table table-sm">
                 <tr>
-                    <th>Products</th>
+                    <th>Product</th>
                     <th>Date Ordered</th>
                     <th>Status</th>
                     <th>Update</th>

@@ -9,7 +9,7 @@
   <title>Curriculo</title>
 </head>
 <style>
-:root {
+    :root {
   --color-sub: #2d2d39;
 }
 
@@ -42,7 +42,7 @@ img {
 .header {
   position: sticky;
   z-index: 111;
-  background-color: yellow;
+  background-color: var(--color-sub);
   padding: 1.5rem 0;
 }
 
@@ -548,13 +548,12 @@ img {
 }
 
 </style>
-
 <body>
   <!-- Header Section -->
   <header class="header">
     <div class="container container--narrow">
-      <a href="https://www.linkedin.com/in/ermelino-piazzetta-b93263148" class="logo">
-        <img src="logo.svg" alt="ERMELINO - LINKEDIN" />
+      <a href="/" class="logo">
+        <img src="logo.svg" alt="EP Logo" />
       </a>
       <nav class="header__nav">
         <input type="checkbox" id="responsive-menu" />
@@ -579,10 +578,12 @@ img {
               <p class="dev__title">Developer</p>
               <p class="dev__location">Campinas, São Paulo, Brasil</p>
               <ul class="dev__social">
+
                 <li>
-                  <a title="LinkedIn" href="https://www.linkedin.com/in/ermelino-piazzetta-b93263148" target="_blank"><i class="im im-linkedin"></i></a>
+                  <a title="LinkedIn" href="https://www.linkedin.com/in/ermelinopiazzetta" target="_blank"><i class="im im-linkedin"></i></a>
                 </li>
               </ul>
+              <!--a href="#" class="btn btn--sub btn--lg">Send Message </a-->
             </div>
           </div>
         </div>
@@ -593,8 +594,12 @@ img {
               Experiencia em atendimento, levantamento de necessidades e suporte técnico aos clientes primeiro e segundo niveis em
               software e infraestrutura (rede de dados, telecomunicações e internet) nas demandas de Tecnologia da
               Informação. Análise de requisitos para a prestação de serviços e levantamento de necessidades técnicas
-              junto aos usuários para apresentação de propostas de soluções técnicas.  Experiência com um pacote Python,
-              Jupyter para análises de Data Science. Elaboração, supervisão e gerenciamento de contratos firmados quanto ao prazo, custos e
+              junto aos usuários para apresentação de propostas de soluções técnicas. Experiência usando análise para
+              entender o comportamento dos clientes e identificar oportunidades. Experiência com um pacote Python,
+              Jupyter para análises de Data Science e capacidade em traduzir questões e estratégias de negócios em
+              análises práticas executadas dentro do prazo e dentro do orçamento e visão para transformar os fluxos de
+              dados em uma visão e entendimento dos clientes com oportunidades de causar um impacto positivo sem
+              impacto financeiro. Elaboração, supervisão e gerenciamento de contratos firmados quanto ao prazo, custos e
               escopo definidos. Acompanhamento dos contratos (técnico/físico/financeiro) para desenvolvimento e
               implantação das soluções. Experiência em metodologias ágeis (Agile Scrum). Acompanhamento pós
               implantação das soluções dos tickets abertos na Central de Serviço e o encerramento das solicitações para a
@@ -608,42 +613,33 @@ img {
               <div class="devSkill">
                 <h4 class="devSkill__title">Ruby on Rails</h4>
                 <p class="devSkill__info">
-                  Desenvolvimento utilizando o framework.
+                  Experiência em desenvolvimento utilizando o framework.
                 </p>
               </div>
               <div class="devSkill">
-                <h4 class="devSkill__title">Arduino</h4>
+                <h4 class="devSkill__title">ReactJS</h4>
                 <p class="devSkill__info">
-                  Desenvolvimento de aplicações de controle utilizando plataforma Arduino
+                  Smet consectetur adipisicing elit. Omnis, nihil? Accusamus aspernatur aut debitis vitae quaerat
+                  nihil fugiat, doloremque nesciunt alias pariatur maxime unde, nam saepe laborum at odit labore.
                 </p>
               </div>
               <div class="devSkill">
                 <h4 class="devSkill__title">Git</h4>
                 <p class="devSkill__info">
-                  Utilização para versionamento de código.
-                </p>
-              </div>
-              <div class="devSkill">
-                <h4 class="devSkill__title">Alfresco</h4>
-                <p class="devSkill__info">
-                  Utilização da ferramenta para versionamento de documentação.
-                </p>
-              </div>
-              <div class="devSkill">
-                <h4 class="devSkill__title">CRM</h4>
-                <p class="devSkill__info">
-                  Controle de clientes.
+                  Auae error deleniti aperiam enim nisi nesciunt, ratione eveniet eos fuga ad recusandae mollitia!
+                  Facere earum, distinctio nihil recusandae ipsum nesciunt. Possimus, ex. Officia maxime nihil
+                  inventore cum tenetur! Veritatis sapiente libero ducimus nesciunt itaque, placeat inventore sint
+                  blanditiis?
                 </p>
               </div>
 
-
-              <h3 class="devInfo__subtitle">Outros Skills</h3>
+              <h3 class="devInfo__subtitle">Other Skills</h3>
               <div class="devInfo__otherSkills">
                 <span class="tag tag--pill tag--sub tag--lg">
-                  <small>Figma </small>
+                  <small>Figma</small>
                 </span>
                 <span class="tag tag--pill tag--sub tag--lg">
-                  <small>Sublime </small>
+                  <small>Sublime</small>
                 </span>
                 <span class="tag tag--pill tag--sub tag--lg">
                   <small>REST API</small>
@@ -651,14 +647,11 @@ img {
                 <span class="tag tag--pill tag--sub tag--lg">
                   <small>Postgres</small>
                 </span>
-                <span class="tag tag--pill tag--sub tag--lg">
-                  <small>Real Time Operating System</small>
-                </span>
               </div>
             </div>
           </div>
           <div class="devInfo">
-            <h3 class="devInfo__title">Alguns Projetos em Andamento</h3>
+            <h3 class="devInfo__title">Projetos</h3>
             <div class="grid grid--two">
 
               <div class="column">
@@ -667,17 +660,17 @@ img {
 
                     <div class="card__body">
                       <h3 class="project__title">Controle de Recebiveis</h3>
-                      <p><a class="project__author" href="https://aamulti.herokuapp.com/">Por Ermelino</a></p>
+                      <p><a class="project__author" href="profile.html">Por Ermelino</a></p>
 
                       <div class="project__tags">
                         <span class="tag tag--pill tag--main">
                           <small>Rails</small>
                         </span>
                         <span class="tag tag--pill tag--main">
-                          <small>Postgresql</small>
+                          <small>Sublime</small>
                         </span>
                         <span class="tag tag--pill tag--main">
-                          <small>Sublime</small>
+                          <small>Postgresql</small>
                         </span>
                       </div>
                     </div>
@@ -691,8 +684,7 @@ img {
 
                     <div class="card__body">
                       <h3 class="project__title">Solicitações e andamento projetos</h3>
-                      <p><a class="project__author" href="https://aamulti.herokuapp.com/">Por Ermelino</a></p>
-
+                      <p><a class="project__author" href="profile.html">Por Ermelino</a></p>
                       <div class="project__tags">
                         <span class="tag tag--pill tag--main">
                           <small>Django</small>
