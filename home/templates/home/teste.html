@@ -42,7 +42,7 @@ img {
 .header {
   position: sticky;
   z-index: 111;
-  background-color: yellow;
+  background-color: silver;
   padding: 1.5rem 0;
 }
 
@@ -50,6 +50,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
+
 }
 
 .header__logo > img {
@@ -556,13 +558,13 @@ img {
       <a href="https://www.linkedin.com/in/ermelino-piazzetta-b93263148" class="logo">
         <img src="logo.svg" alt="ERMELINO - LINKEDIN" />
       </a>
+
       <nav class="header__nav">
         <input type="checkbox" id="responsive-menu" />
-        <label for="responsive-menu" class="toggle-menu">
+          <label for="responsive-menu" class="toggle-menu">
           <span>Menu</span>
           <div class="toggle-menu__lines"></div>
-        </label>
-
+          </label>
       </nav>
     </div>
   </header>
@@ -663,13 +665,16 @@ img {
 
               <div class="column">
                 <div class="card project">
-                  <a href="single-project.html" class="project">
 
                     <div class="card__body">
-                      <h3 class="project__title">Controle de Recebiveis</h3>
-                      <p><a class="project__author" href="https://aamulti.herokuapp.com/">Por Ermelino</a></p>
+                      <h1>Controle de Recebiveis</h1>
+                      <p><a class="project__author" href="https://aamulti.herokuapp.com/">ACESSAR</a></p>
 
                       <div class="project__tags">
+
+                        <span class="tag tag--pill tag--main">
+                          <small>Utilizando:</small>
+                        </span>
                         <span class="tag tag--pill tag--main">
                           <small>Rails</small>
                         </span>
@@ -687,13 +692,15 @@ img {
 
               <div class="column">
                 <div class="card project">
-                  <a href="single-project.html" class="project">
 
                     <div class="card__body">
-                      <h3 class="project__title">Solicitações e andamento projetos</h3>
-                      <p><a class="project__author" href="https://aamulti.herokuapp.com/">Por Ermelino</a></p>
+                      <h1>Solicitações e andamento projetos</h1>
+                      <p><a class="project__author" href="https://epngestao.herokuapp.com/">ACESSAR</a></p>
 
                       <div class="project__tags">
+                        <span class="tag tag--pill tag--main">
+                          <small>Utilizando:</small>
+                        </span>
                         <span class="tag tag--pill tag--main">
                           <small>Django</small>
                         </span>
@@ -705,7 +712,6 @@ img {
                         </span>
                       </div>
                     </div>
-                  </a>
                 </div>
               </div>
             </div>
