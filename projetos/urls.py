@@ -10,13 +10,16 @@ urlpatterns = [
         #path('logout/', views.logoutUser, name="logout"),
 
         path('dashboard/', views.dashboard, name="dashboard"),
+
         path('user/', views.userPage, name="user-page"),
 
         path('account/', views.accountSettings, name="account"),
 
         path('products/', views.products, name="products"),
-        path('customer/', views.customer, name="customer"),
+        path('status/', views.status, name="status"),
 
+        path('customer/', views.customer, name="customer"),
+        path('criacustomer/', views.criacustomer, name="criacustomer"),
         path('order_form/', views.createorder, name="order_form"),
         path('update_order/<str:pk>/', views.updateOrder, name="update_order"),
         path('delete_order/<str:pk>/', views.deleteOrder, name="delete_order"),

@@ -1,59 +1,49 @@
-{% extends 'projetos/main.html' %}
 
-{% block content %}
 
-{% include 'projetos/status.html' %}
 
-<br>
 
-<div class="row">
-    <div class="col-md">
-        <h5>CUSTOMERS:</h5>
-        <hr>
-        <div class="card card-body">
-            <a class="btn btn-primary btn-sm btn-block" href="">Create Customer</a>
-            <table class="table table-sm">
+
+<style>
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: gray;
+    border: 1px solid rgba(0,0,0,.125);
+}
+ </style>
+
+
+
+    <div class="row">
+        <div class="col-sm">
+                <h1> MODULO LISTA </h1>
+
+            <table>
+                <thead>
                 <tr>
-                    <th></th>
-                    <th>Customer</th>
-                    <th>Phone</th>
+                    <th>LISTA CUSTOMER</th>
                 </tr>
-                {% for customer in customers %}
-                <tr>
-                    <td><a class="btn btn-sm btn-info" href="{% url 'customer' customer.id %}">View</a></td>
-                    <td>{{customer.name}}</td>
-                    <td>{{customer.phone}}</td>
-                </tr>
-                {% endfor %}
+                </thead>
             </table>
+
+             <ul class="list-group">
+
+                    {% for customer in customer %}
+                        <li class="list-group-item">
+                            <tr>
+                                <td>{{customer.name}}</td>
+                                <td>{{customer.phone}}</td>
+
+                            </tr>
+                        </li>
+                    {% endfor %}
+             </ul>
+            <br>
+                <a href="{% url 'home' %}" class="btn btn-primary">HOME</a>
         </div>
+
+
     </div>
-    <div class="col-md">
-        <h5>LAST 5 ORDERS:</h5>
-        <hr>
-        <div class="card card-body">
-            <table class="table table-sm">
-                <tr>
-                    <th>Product</th>
-                    <th>Date Ordered</th>
-                    <th>Status</th>
-                    <th>Update</th>
-                    <th>Remove</th>
-                </tr>
-                {% for order in orders %}
-                <tr>
-                    <td>{{order.product}}</td>
-                    <td>{{order.date_created}}</td>
-                    <td>{{order.status}}</td>
-                    <td><a class="btn btn-sm btn-info" href="{% url 'update_order' order.id %}">Update</a></td>
-                    <td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Delete</a></td>
-                </tr>
-                {% endfor %}
-            </table>
-        </div>
-    </div>
-</div>
-
-
-
-{% endblock %}

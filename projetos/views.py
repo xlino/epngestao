@@ -103,8 +103,7 @@ def accountSettings(request):
 
         return render(request, 'projetos/account_settings.html', context)
 
-def testex(request):
-    return render(request, 'projetos/testex.html')
+
 
 #@login_required(login_url='login')
 #@allowed_users(allowed_roles=['admin', 'customer'])
@@ -113,22 +112,39 @@ def products(request):
 
         return render(request, 'projetos/products.html', {'products': products})
 
+def status(request):
+
+        orders = Order.objects.all()
+        customers = Customer.objects.all()
+
+        total_customers = customers.count()
+
+        total_orders = orders.count()
+        delivered = orders.filter(status='Delivered').count()
+        pending = orders.filter(status='Pending').count()
+
+        context = {'orders': orders, 'customers': customers,
+                   'total_orders': total_orders, 'delivered': delivered,
+                   'pending': pending}
+
+        return render(request, 'projetos/status.html', context)
+
+
 
 #@login_required(login_url='login')
 #@allowed_users(allowed_roles=['admin'])
 def customer(request):
-        customer = Customer.objects.get(id=pk_test)
+        customer = Customer.objects.all()
 
-        orders = customer.order_set.all()
-        order_count = orders.count()
+        return render(request, 'projetos/customer.html')
 
-        myFilter = OrderFilter(request.GET, queryset=orders)
-        orders = myFilter.qs
+def testex(request):
+    return render(request, 'projetos/testex.html')
 
-        context = {'customer': customer, 'orders': orders, 'order_count': order_count,
-                   'myFilter': myFilter}
-        return render(request, 'projetos/customer.html', context)
+def criacustomer(request):
+        customer = Customer.objects.all()
 
+        return render(request, 'projetos/criacustomer.html', {'customer': customer})
 
 #@login_required(login_url='login')
 #@allowed_users(allowed_roles=['admin'])

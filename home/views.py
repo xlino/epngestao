@@ -15,6 +15,8 @@ def mylogout(request):
     logout(request)
     return render(request, 'home/home.html')
 
-@login_required
-def dashboard(request):
-    return render(request, 'projetos/dashboard.html')
+#@login_required
+#def dashboard(request):
+
+ #   return render(request, 'projetos/dashboard.html'
+ #                 )

@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
-
-
 {% block main %}
-{% load widget_tweaks %}
-    <br>
+<br>
 
 <div class="row">
     <div class="col-md">
@@ -12,7 +9,7 @@
             <hr>
             <a class="btn btn-outline-info btn-sm btn-block" href="">Update Customer</a>
             <h6></h6>
-            <a class="btn btn-outline-info btn-sm btn-block" href="{% url 'create_order' customer.id %}">Place Order</a>
+            <a class="btn btn-outline-info btn-sm btn-block" href="">Place Order</a>
         </div>
     </div>
 
@@ -84,3 +81,4 @@
 </div>
 
 {% endblock %}
+

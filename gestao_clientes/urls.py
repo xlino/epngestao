@@ -41,7 +41,7 @@ urlpatterns = [
     #path('controle/', include(controle_urls)),
     path('projetos/', include(projetos_urls)),
     #path('blog/', include(blog_urls)),
-    #path('clientes/', include(clientes_urls)),
+    path('clientes/', include(clientes_urls)),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('admin/', admin.site.urls),
