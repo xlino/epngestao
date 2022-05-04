@@ -148,7 +148,7 @@ def criacustomer(request):
 
 #@login_required(login_url='login')
 #@allowed_users(allowed_roles=['admin'])
-def createorder(request):
+def createOrder(request):
         OrderFormSet = inlineformset_factory(Customer, Order, fields=('product', 'status'), extra=10)
         customer = Customer.objects.get(id=pk)
         formset = OrderFormSet(queryset=Order.objects.none(), instance=customer)
@@ -191,3 +191,20 @@ def deleteOrder(request, pk):
 
         context = {'item': order}
         return render(request, 'projetos/delete.html', context)
+
+# Create your views here.
+
+def orderlist(request):
+    return render(request, 'projetos/orderlist.html')
+
+def updateorder(request):
+    return render(request, 'projetos/updateorder.html')
+
+def deleteorder(request):
+    return render(request, 'projetos/deleteorder.html')
+
+def updatecustomer(request):
+    return render(request, 'projetos/updatecustomer.html')
+
+def deletecustomer(request):
+    return render(request, 'projetos/deletecustomer.html')
