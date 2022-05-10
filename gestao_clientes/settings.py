@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'bootstrapform',
     'widget_tweaks',
     'clientes',
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
     #'moeda',
     #'controle',
     'projetos',
+
 ]
 
 MIDDLEWARE = [

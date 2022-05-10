@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
+{% block main %}
+    {% block title %}CONFIRMA{% endblock %}
 
-{% block title %}CONFIRMA{% endblock %}
-    {% block main %}
     <h1> MODULO CONFIRMA DELETE </h1>
     <h1> Tem certeza que deseja deletar {{person.first_name}} {{person.last_name}}? </h1>
     <form method="POST" enctype="multipart/form-data" >
@@ -12,4 +12,4 @@
         <br>
         <a href="{% url 'person_list' %}"class="btn btn-primary">RETORNA PARA LISTAGEM</a>
     </form>
-    {% endblock %}
+{% endblock %}

@@ -24,11 +24,11 @@ urlpatterns = [
         path('criacustomer/', views.criacustomer, name="criacustomer"),
         #path('order_form/', views.createOrder, name="order_form"),
         #path('update_order/<str:pk>/', views.updateOrder, name="update_order"),
-        #path('delete_order/<str:pk>/', views.deleteOrder, name="delete_order"),
+        path('deleteorder/<str:pk>/', views.deleteorder, name="deleteorder"),
 
         path('orderlist/', views.orderlist, name="orderlist"),
         path('updateorder/', views.updateorder, name="updateorder"),
-        path('deleteorder/', views.deleteorder, name="deleteorder"),
+        #path('deleteorder/', views.deleteorder, name="deleteorder"),
 
         path('updatecustomer/', views.updatecustomer, name="updatecustomer"),
         path('deletecustomer/', views.deletecustomer, name="deletecustomer"),

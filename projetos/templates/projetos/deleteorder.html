@@ -1,3 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
 
-<h1>ESTAMOS IMPLANTANDO O DELETE PARA AS ORDENS</h1>
+<style>
+{% block main %}
+body{
+    background-color: white;
+    color: black;
+
+}
+ </style>
+    <h1> Módulo Deletar </h1>
+
+    <h1> Tem certeza que deseja deletar "{{order.id}}"? </h1>
+    <form method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
+        {{form}}
+        <br>
+        <button type="submit" class="btn btn-danger" >DELETAR</button>
+        <br>
+        <a href="{% url 'home' %}"class="btn btn-primary">RETORNA </a>
+    </form>
+{% endblock %}
 

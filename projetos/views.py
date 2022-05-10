@@ -183,7 +183,7 @@ def updateOrder(request, pk):
 
 #@login_required(login_url='login')
 #@allowed_users(allowed_roles=['admin'])
-def deleteOrder(request, pk):
+def deleteorder(request, pk):
         order = Order.objects.get(id=pk)
         if request.method == "POST":
                 order.delete()
@@ -200,8 +200,8 @@ def orderlist(request):
 def updateorder(request):
     return render(request, 'projetos/updateorder.html')
 
-def deleteorder(request):
-    return render(request, 'projetos/deleteorder.html')
+#def deleteorder(request):
+#    return render(request, 'projetos/deleteorder.html')
 
 def updatecustomer(request):
     return render(request, 'projetos/updatecustomer.html')
