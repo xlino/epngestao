@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block main %}
+    {% block title %}DELETE CONFIRM{% endblock %}
+
+    <h1> MODULO CONFIRMA DELETE </h1>
+    <h1> Tem certeza que deseja deletar {{order.product}}? </h1>
+    <form method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
+        {{form}}
+        <br>
+        <button type="submit" class="btn btn-danger" >DELETAR</button>
+        <br>
+        <a href="{% url 'orderlist' %}"class="btn btn-primary">RETORNA PARA LISTAGEM</a>
+    </form>
+{% endblock %}

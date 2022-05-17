@@ -183,14 +183,14 @@ def updateOrder(request, pk):
 
 #@login_required(login_url='login')
 #@allowed_users(allowed_roles=['admin'])
-def deleteorder(request, pk):
-        order = Order.objects.get(id=pk)
+def deleteorder(request, id):
+        order = get_object_or_404(Order, pk=id)
+        form = OrderForm(request.POST or None, request.FILES or None, instance=order)
         if request.method == "POST":
                 order.delete()
-                return redirect('/')
+                return redirect('dashboard')
+        return render(request, 'projetos/order_delete_confirm.html', {'order': order})
 
-        context = {'item': order}
-        return render(request, 'projetos/delete.html', context)
 
 # Create your views here.
 
