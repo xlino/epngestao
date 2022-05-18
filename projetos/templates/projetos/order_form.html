@@ -1,21 +1,42 @@
 {% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% load bootstrap %}
+
+{% block title %}UPDATE FORM{% endblock %}
+
+    {% block main %}
+<style>
+p {
+   color: black;
+   padding: 8px;
+   font-family: Arial, Helvetica, sans-serif
+   }
+
+body{
+    background-color: #ebeff5;
+    color: gray;
+}
+</style>
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+
+        <div class="col-sm">
+            <h1> MODULO UPDATE FORM  </h1>
+            <form method="POST" enctype="multipart/form-data" >
+                {% csrf_token %}
+                {{form | bootstrap}}
+                <a><button type="submit" class="btn btn-primary" >SALVAR</button></a>
+                <a href="{% url 'home' %}" class="btn btn-primary"">HOME</a>
+                <a href="{% url 'person_list' %}" class="btn btn-primary"">RETORNA PARA LISTAGEM</a>
+
+            </form>
 
 
-<br>
-<div class="row">
-    <div class="col">
-        <div class="col-md">
-            <div class="card card-body">
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    {{form.as_p}}
-                    <input type="submit", name="Submit">
-                </form>
-            </div>
+        </div>
+
+        <div class="col-sm">
+
         </div>
     </div>
-</div>
-
-{% endblock content %}
+    {% endblock %}

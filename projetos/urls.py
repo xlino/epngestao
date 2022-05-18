@@ -4,6 +4,7 @@ from .views import orderlist
 
 from . import views
 from .views import deleteorder
+from .views import updateorder
 urlpatterns = [
         path('testex/', views.testex, name="testex"),
 
@@ -27,7 +28,7 @@ urlpatterns = [
         path('deleteorder/<int:id>/', deleteorder, name="deleteorder"),
 
         path('orderlist/', views.orderlist, name="orderlist"),
-        path('updateorder/', views.updateorder, name="updateorder"),
+        path('updateorder/<int:id>/', updateorder, name="updateorder"),
         #path('deleteorder/', views.deleteorder, name="deleteorder"),
 
         path('updatecustomer/', views.updatecustomer, name="updatecustomer"),

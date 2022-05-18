@@ -197,8 +197,14 @@ def deleteorder(request, id):
 def orderlist(request):
     return render(request, 'projetos/orderlist.html')
 
-def updateorder(request):
-    return render(request, 'projetos/updateorder.html')
+def updateorder(request, id):
+        order = get_object_or_404(Order, pk=id)
+        form = OrderForm(request.POST or None, request.FILES or None, instance=order)
+        if form.is_valid():
+                form.save()
+                return redirect('dashboard')
+
+        return render(request, 'projetos/order_form.html', {'form': form})
 
 #def deleteorder(request):
 #    return render(request, 'projetos/deleteorder.html')
