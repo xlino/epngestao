@@ -3,6 +3,7 @@ from django.contrib.auth import views as auth_views
 from .views import orderlist
 
 from . import views
+from .views import order_new
 from .views import deleteorder
 from .views import updateorder
 
@@ -31,6 +32,7 @@ urlpatterns = [
         path('deleteorder/<int:id>/', deleteorder, name="deleteorder"),
         path('orderlist/', views.orderlist, name="orderlist"),
         path('updateorder/<int:id>/', updateorder, name="updateorder"),
+        path('order_new/', order_new, name="order_new"),
 
 #URLs CUSTOMER
         path('deletecustomer/<int:id>/', deletecustomer, name="deletecustomer"),

@@ -200,6 +200,12 @@ def updateorder(request, id):
                 return redirect('dashboard')
         return render(request, 'projetos/order_form.html', {'form': form})
 
+def order_new(request):
+    form = OrderForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        form.save()
+        return redirect('dashboard')
+    return render(request, 'projetos/order_form.html', {'form': form})
 
 # Create CUSTOMERS views here.
 def customerlist(request):
