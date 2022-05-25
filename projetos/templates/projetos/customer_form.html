@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
 
-{% block title %}FORMULARIO{% endblock %}
+{% block title %}CRIA CUSTOMER FORM{% endblock %}
 
     {% block main %}
 <style>
@@ -22,13 +22,13 @@ body{
         </div>
 
         <div class="col-sm">
-            <h1> MODULO FORMULARIO 1  </h1>
+            <h1> MODULO CUSTOMER FORM  </h1>
             <form method="POST" enctype="multipart/form-data" >
                 {% csrf_token %}
                 {{form | bootstrap}}
                 <a><button type="submit" class="btn btn-primary" >SALVAR</button></a>
                 <a href="{% url 'home' %}" class="btn btn-primary"">HOME</a>
-                <a href="{% url 'dashboard' %}" class="btn btn-primary"">RETORNA </a>
+                <a href="{% url 'dashboard' %}" class="btn btn-primary"">RETORNA</a>
 
             </form>
 

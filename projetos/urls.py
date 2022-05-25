@@ -5,35 +5,40 @@ from .views import orderlist
 from . import views
 from .views import deleteorder
 from .views import updateorder
+
+from .views import customer_new
+from .views import deletecustomer
+from .views import updatecustomer
+
 urlpatterns = [
+        path('register/', views.registerPage, name="register"),
+        path('user/', views.userPage, name="user-page"),
+        path('account/', views.accountSettings, name="account"),
+
+#URL_CURRICULO
         path('testex/', views.testex, name="testex"),
 
-        path('register/', views.registerPage, name="register"),
-        #path('login/', views.loginPage, name="login"),
-        #path('logout/', views.logoutUser, name="logout"),
-
+#URL_DASHBOARD
         path('dashboard/', views.dashboard, name="dashboard"),
 
-        path('user/', views.userPage, name="user-page"),
-
-        path('account/', views.accountSettings, name="account"),
 
         path('products/', views.products, name="products"),
         path('status/', views.status, name="status"),
-
         path('customer/', views.customer, name="customer"),
         path('criacustomer/', views.criacustomer, name="criacustomer"),
-        #path('order_form/', views.createOrder, name="order_form"),
-        #path('update_order/<str:pk>/', views.updateOrder, name="update_order"),
-        path('deleteorder/<int:id>/', deleteorder, name="deleteorder"),
 
+#URLs ORDER
+        path('deleteorder/<int:id>/', deleteorder, name="deleteorder"),
         path('orderlist/', views.orderlist, name="orderlist"),
         path('updateorder/<int:id>/', updateorder, name="updateorder"),
-        #path('deleteorder/', views.deleteorder, name="deleteorder"),
 
-        path('updatecustomer/', views.updatecustomer, name="updatecustomer"),
-        path('deletecustomer/', views.deletecustomer, name="deletecustomer"),
+#URLs CUSTOMER
+        path('deletecustomer/<int:id>/', deletecustomer, name="deletecustomer"),
+        path('customerlist/', views.customerlist, name="customerlist"),
+        path('updatecustomer/<int:id>/', updatecustomer, name="updatecustomer"),
+        path('customer_new/', customer_new, name="customer_new"),
 
+#URLs PASSWORD
         path('reset_password/', auth_views.PasswordResetView.as_view(
                 template_name="accounts/password_reset.html"), name="reset_password"),
         path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(

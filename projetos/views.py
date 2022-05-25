@@ -170,16 +170,17 @@ def createOrder(request):
 def updateOrder(request, pk):
         order = Order.objects.get(id=pk)
         form = OrderForm(instance=order)
-
         if request.method == 'POST':
                 form = OrderForm(request.POST, instance=order)
                 if form.is_valid():
                         form.save()
                         return redirect('/')
-
         context = {'form': form}
         return render(request, 'projetos/order_form.html', context)
 
+# Create ORDERS  views here.
+def orderlist(request):
+    return render(request, 'projetos/orderlist.html')
 
 #@login_required(login_url='login')
 #@allowed_users(allowed_roles=['admin'])
@@ -191,26 +192,38 @@ def deleteorder(request, id):
                 return redirect('dashboard')
         return render(request, 'projetos/order_delete_confirm.html', {'order': order})
 
-
-# Create your views here.
-
-def orderlist(request):
-    return render(request, 'projetos/orderlist.html')
-
 def updateorder(request, id):
         order = get_object_or_404(Order, pk=id)
         form = OrderForm(request.POST or None, request.FILES or None, instance=order)
         if form.is_valid():
                 form.save()
                 return redirect('dashboard')
-
         return render(request, 'projetos/order_form.html', {'form': form})
 
-#def deleteorder(request):
-#    return render(request, 'projetos/deleteorder.html')
 
-def updatecustomer(request):
-    return render(request, 'projetos/updatecustomer.html')
+# Create CUSTOMERS views here.
+def customerlist(request):
+    return render(request, 'projetos/customerlist.html')
 
-def deletecustomer(request):
-    return render(request, 'projetos/deletecustomer.html')
+def deletecustomer(request, id):
+        customer = get_object_or_404(Customer, pk=id)
+        form = CustomerForm(request.POST or None, request.FILES or None, instance=customer)
+        if request.method == "POST":
+                customer.delete()
+                return redirect('dashboard')
+        return render(request, 'projetos/customer_delete_confirm.html', {'customer': customer})
+
+def updatecustomer(request, id):
+        customer = get_object_or_404(Customer, pk=id)
+        form = CustomerForm(request.POST or None, request.FILES or None, instance=customer)
+        if form.is_valid():
+                form.save()
+                return redirect('dashboard')
+        return render(request, 'projetos/customer_form.html', {'form': form})
+
+def customer_new(request):
+    form = CustomerForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        form.save()
+        return redirect('dashboard')
+    return render(request, 'projetos/customer_form.html', {'form': form})
