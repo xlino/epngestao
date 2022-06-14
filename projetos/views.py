@@ -55,7 +55,7 @@ def logoutUser(request):
 
 
 
-#@login_required
+@login_required
 #@admin_only
 def dashboard(request):
         orders = Order.objects.all()
